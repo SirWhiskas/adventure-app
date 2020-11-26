@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Header />
       <SimpleGrid columns={2} spacing={5}>
-        <Box maxW="sm">
+        <Box borderWidth="1px" maxW="sm">
           <SideBar />
         </Box>
         <Box colSpan={4}>

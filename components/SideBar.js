@@ -6,8 +6,15 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
-  Text
+  Text,
+  List,
+  ListItem,
+  ListIcon,
+  VStack,
+  StackDivider
 } from "@chakra-ui/react"
+import { GiDaemonSkull, GiTreasureMap, GiMusicSpell, GiCrossShield, GiMagicSwirl } from 'react-icons/Gi'
+import DnDLookupButton from './DnDLookupButton'
 
 const expandedColor = "tomato"
 const collapsedColor = "white"
@@ -25,8 +32,16 @@ const SideBar = () => {
                 <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel pb={4}>
-                    Dungeon Master - Chris Pickens
-                    Current Location - Blood of the Vine Tavern
+                    <List spacing={3}>
+                        <ListItem>
+                            <ListIcon as={GiDaemonSkull} color="green.500" />
+                            Dungeon Master - Chris Pickens
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={GiTreasureMap} color="green.500" />
+                            Current Location - Blood of the Vine Tavern
+                        </ListItem>
+                    </List>
                 </AccordionPanel>
             </AccordionItem>
 
@@ -40,9 +55,20 @@ const SideBar = () => {
                 <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel pb={4}>
-                    Tiefling Bard - John McKay
-                    Tiefling Bard - John McKay
-                    Tiefling Bard - John McKay
+                    <List spacing={3}>
+                        <ListItem>
+                            <ListIcon as={GiMusicSpell} color="green.500" />
+                            Tiefling Bard - John McKay
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={GiCrossShield} color="green.500" />
+                            Dwarf Cleric - Megan Lewis
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={GiMagicSwirl} color="green.500" />
+                            Half-Elf Sorcerrer - Andrew Lewis
+                        </ListItem>
+                    </List>
                 </AccordionPanel>
             </AccordionItem>
             
@@ -104,8 +130,20 @@ const SideBar = () => {
                 <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel pb={4}>
-                    Spell-lookup
-                    Monster-lookup
+                <Box p={2}>
+                    <VStack
+                    divider={<StackDivider borderColor="gray.200" />}
+                    spacing={4}
+                    align="stretch"
+                    >
+                        <Box h="40px">
+                            <DnDLookupButton />
+                        </Box>
+                        <Box h="40px">
+                            Links to D&amp;D resources
+                        </Box>
+                    </VStack>
+                </Box>
                 </AccordionPanel>
             </AccordionItem>
         </Accordion>
